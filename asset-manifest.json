@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/giphy-youtube-client/static/css/main.a58fd577.chunk.css",
-    "main.js": "/giphy-youtube-client/static/js/main.6fe4ffb8.chunk.js",
-    "main.js.map": "/giphy-youtube-client/static/js/main.6fe4ffb8.chunk.js.map",
+    "main.js": "/giphy-youtube-client/static/js/main.36b24124.chunk.js",
+    "main.js.map": "/giphy-youtube-client/static/js/main.36b24124.chunk.js.map",
     "runtime-main.js": "/giphy-youtube-client/static/js/runtime-main.6683639d.js",
     "runtime-main.js.map": "/giphy-youtube-client/static/js/runtime-main.6683639d.js.map",
     "static/js/2.bc427d01.chunk.js": "/giphy-youtube-client/static/js/2.bc427d01.chunk.js",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.6683639d.js",
     "static/js/2.bc427d01.chunk.js",
     "static/css/main.a58fd577.chunk.css",
-    "static/js/main.6fe4ffb8.chunk.js"
+    "static/js/main.36b24124.chunk.js"
   ]
 }
