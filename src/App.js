@@ -10,18 +10,18 @@ import './App.css';
 function App({ history }) {
   const search = (searchQuery) => {
     console.log(searchQuery);
-    history.push(`/search?q=${searchQuery}`);
+    history.push(`${process.env.PUBLIC_URL}/search?q=${searchQuery}`);
   };
   return (
     <div className="App">
       <header className="header">
-        <Link className="link" to="/">Home</Link>
+        <Link className="link" to={`${process.env.PUBLIC_URL}/`}>Home</Link>
         <SearchForm onSubmit={search} />
       </header>
       <Switch>
-        <Route exact={true} path="/" render={(props) => <Trending {...props} />} />
-        <Route path="/search" render={(props) => <Search {...props} />} />
-        <Route path="/gif/:id" render={(props) => <Details {...props} />} />
+        <Route exact={true} path={`${process.env.PUBLIC_URL}/`} render={(props) => <Trending {...props} />} />
+        <Route path={`${process.env.PUBLIC_URL}/search`} render={(props) => <Search {...props} />} />
+        <Route path={`${process.env.PUBLIC_URL}/gif/:id`} render={(props) => <Details {...props} />} />
       </Switch>
     </div>
   );
