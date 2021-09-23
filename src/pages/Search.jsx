@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet';
 import { getQuery } from '../utils';
 import { searchRequest } from '../api/search';
 import { Grid } from '../components/Grid';
@@ -16,8 +17,8 @@ export const Search = ({ location }) => {
   };
 
   const loadMore = () => {
-    setOffset(offset + limit)
-  }
+    setOffset(offset + limit);
+  };
 
   useEffect(() => {
     const query = getQuery(location, 'q');
@@ -27,6 +28,16 @@ export const Search = ({ location }) => {
   useEffect(() => {
     search(query);
   }, [query, offset]);
-  
-  return <div>{items ? <Grid items={items} /> : 'Loading'}  <LoadMoreButton onClick={loadMore} /></div>;
+
+  return (
+    <>
+      <Helmet>
+        <title>Giphy | Search</title>
+      </Helmet>
+      <div>
+        {items ? <Grid items={items} /> : 'Loading'}{' '}
+        <LoadMoreButton onClick={loadMore} />
+      </div>
+    </>
+  );
 };

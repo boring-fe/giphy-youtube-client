@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet';
 import { getTrending } from '../api/trending';
 import { Grid } from '../components/Grid';
 import { LoadMoreButton } from '../components/LoadMoreButton';
@@ -13,17 +14,22 @@ export const Trending = () => {
   };
 
   const loadMore = () => {
-    setOffset(offset + limit)
-  }
+    setOffset(offset + limit);
+  };
 
   useEffect(() => {
     fetchTrending();
   }, [offset]);
 
   return (
-    <div>
-      {items ? <Grid items={items} /> : 'Loading...'}
-      <LoadMoreButton onClick={loadMore} />
-    </div>
+    <>
+      <Helmet>
+        <title>Giphy | Trending</title>
+      </Helmet>
+      <div>
+        {items ? <Grid items={items} /> : 'Loading...'}
+        <LoadMoreButton onClick={loadMore} />
+      </div>
+    </>
   );
 };
