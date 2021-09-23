@@ -25,7 +25,7 @@ const Card = ({
   return (
     <Link
       className={[styles.root, className].join(' ')}
-      to={`/gif/${id}`}
+      to={`${process.env.PUBLIC_URL}/gif/${id}`}
     >
      <img
           src={previewUrl}
